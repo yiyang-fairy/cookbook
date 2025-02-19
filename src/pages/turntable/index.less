@@ -1,0 +1,129 @@
+.container {
+  min-height: 100vh;
+  background: #fff;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: calc(100vh - 45px);
+  padding: 24px;
+}
+
+.wheelContainer {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 40px auto;
+}
+
+.wheel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid #ff6b6b;
+  transition: transform 3s cubic-bezier(0.2, 0.8, 0.3, 1);
+  background: conic-gradient(
+    #fff 0deg 72deg,
+    #f8f9fa 72deg 144deg,
+    #fff 144deg 216deg,
+    #f8f9fa 216deg 288deg,
+    #fff 288deg 360deg
+  );
+
+  &.spinning {
+    pointer-events: none;
+  }
+}
+
+.item {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
+}
+
+.itemContent {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform-origin: left center;
+  white-space: nowrap;
+  font-size: 14px;
+  color: #333;
+  z-index: 1;
+  text-align: center;
+  width: max-content;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.char {
+  display: block;
+  line-height: 1.2;
+}
+
+.pointer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: #ff6b6b;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border: 4px solid #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  &:hover {
+    background: #ff8585;
+  }
+
+  &.disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    &::after {
+      content: '转动中...';
+    }
+  }
+}
+
+.result {
+  margin-top: 24px;
+  padding: 12px 24px;
+  background: #ff6b6b;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 18px;
+
+  .selectedItem {
+    color: #ffd700;
+    margin-left: 8px;
+    font-weight: bold;
+  }
+}
+
+:global {
+  .adm-nav-bar {
+    background: #ff6b6b;
+    color: #fff;
+    
+    .adm-nav-bar-back-arrow {
+      color: #fff;
+    }
+  }
+} 
