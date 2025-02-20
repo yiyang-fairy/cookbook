@@ -5,6 +5,8 @@ import { SetOutline } from 'antd-mobile-icons';
 import styles from './index.less';
 import { useState } from 'react';
 import { history } from 'umi';
+import turntableIcon from '@/assets/turntable.gif';
+import Flex from '@/components/Flex';
 
 const typeMap = {
   [RecipeType.MEAT]: '纯肉类',
@@ -65,7 +67,7 @@ export default function Home() {
 
       {/* 分类和菜品列表 */}
       <div className={styles.container}>
-        <SideBar activeKey={activeKey} onChange={handleSideBarChange}>
+        <SideBar activeKey={activeKey} onChange={handleSideBarChange} style={{'--background-color': '#fdf4f5'}}>
           {Object.entries(typeMap).map(([key, title]) => (
             <SideBar.Item key={key} title={title} />
           ))}
@@ -103,14 +105,20 @@ export default function Home() {
       {/* 转盘入口按钮 */}
       <FloatingBubble
         style={{
-          '--initial-position-bottom': '24px',
-          '--initial-position-left': '24px',
+          '--initial-position-bottom': '42px',
+          '--initial-position-left': '42px',
           '--edge-distance': '24px',
+          '--background': '#ff6b6b',
+          'height': '0'
         }}
+        axis='xy'
+        magnetic='x'
         onClick={handleTurntableClick}
       >
-        {/* <SetOutline fontSize={28} /> */}
-        <img src="https://loading.io/asset/775851" alt="" />
+        <Flex>
+          <img src={turntableIcon} alt="转盘" className={styles.turntableIcon} />
+          <Flex className={styles.turntableText}>转</Flex>
+        </Flex>
       </FloatingBubble>
     </div>
   );

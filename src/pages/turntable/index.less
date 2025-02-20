@@ -1,6 +1,7 @@
 .container {
   min-height: 100vh;
-  background: #fff;
+  background: url('@/assets/food001.jpg') no-repeat center center;
+  background-size: cover;
 }
 
 .content {
@@ -103,7 +104,7 @@
 }
 
 .result {
-  margin-top: 24px;
+  margin-top: 50px;
   padding: 12px 24px;
   background: #ff6b6b;
   border-radius: 8px;
@@ -117,6 +118,30 @@
   }
 }
 
+.popup {
+  position: fixed;
+  top: 30%;
+  left: 15%;
+  background: rgba(255, 107, 107, 0.95);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  
+  .popupContent {
+    text-align: center;
+    color: #fff;
+    font-size: 18px;
+    
+    .selectedFood {
+      font-weight: bold;
+      margin-left: 8px;
+      font-size: 20px;
+      color: #ffeb3b;
+    }
+  }
+}
+
 :global {
   .adm-nav-bar {
     background: #ff6b6b;
@@ -125,5 +150,9 @@
     .adm-nav-bar-back-arrow {
       color: #fff;
     }
+  }
+
+  .animate__animated {
+    --animate-duration: 0.5s;
   }
 } 

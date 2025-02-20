@@ -9,6 +9,8 @@
     "start": "npm run dev"
   },
   "dependencies": {
+    "@lucky-canvas/react": "^0.1.13",
+    "animate.css": "^4.1.1",
     "antd-mobile": "^5.38.1",
     "antd-mobile-icons": "^0.3.0",
     "umi": "^4.4.5"

@@ -25,5 +25,9 @@ export interface Recipe {
 export interface TakeoutShop {
   id: string;
   name: string;
-  address?: string;
+  address: string;
+  rating: number;
+  deliveryTime: string;
+  minPrice: number;
+  deliveryFee: number;
 } 
