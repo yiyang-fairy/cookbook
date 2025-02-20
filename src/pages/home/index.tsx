@@ -79,7 +79,7 @@ export default function Home() {
                 key={recipe.id} 
                 className={styles.recipeCard}
                 onClick={() => handleRecipeClick(recipe.id)}
-              >
+              >1
                 <div className={styles.recipeCardContent}>
                   <Image 
                     src={`https://picsum.photos/200/200?random=${recipe.id}`}
