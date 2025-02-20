@@ -1,5 +1,12 @@
 import { Recipe, RecipeType, TakeoutShop } from '@/types/recipe';
 
+
+export const typeMap = {
+  [RecipeType.MEAT]: '纯肉类',
+  [RecipeType.VEGETABLE]: '纯素菜',
+  [RecipeType.MIXED]: '荤素搭配',
+  [RecipeType.DIET]: '减脂类',
+};
 export const recipes: Recipe[] = [
   {
     id: '1',

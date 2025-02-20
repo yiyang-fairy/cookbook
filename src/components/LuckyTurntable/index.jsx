@@ -1,7 +1,7 @@
 import React, { useState, useRef } from 'react'
 import { LuckyWheel } from '@lucky-canvas/react'
 
-export default function App({prizes,onEnd}) {
+export default function App({prizes,onEnd,onStart}) {
   const [blocks] = useState([
     { padding: '13px', background: '#ff6b6b' }
   ])
@@ -32,6 +32,7 @@ export default function App({prizes,onEnd}) {
       prizes={prizes}
       buttons={buttons}
       onStart={() => {
+        onStart()
         myLucky.current.play()
         setTimeout(() => {
           const index = Math.floor(Math.random() * prizes.length)

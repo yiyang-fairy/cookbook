@@ -1,5 +1,5 @@
 import { SideBar, Swiper, Image, FloatingBubble } from 'antd-mobile';
-import { recipes } from '@/data/recipes';
+import { recipes, typeMap } from '@/data/recipes';
 import { RecipeType } from '@/types/recipe';
 import { SetOutline } from 'antd-mobile-icons';
 import styles from './index.less';
@@ -8,12 +8,7 @@ import { history } from 'umi';
 import turntableIcon from '@/assets/turntable.gif';
 import Flex from '@/components/Flex';
 
-const typeMap = {
-  [RecipeType.MEAT]: '纯肉类',
-  [RecipeType.VEGETABLE]: '纯素菜',
-  [RecipeType.MIXED]: '荤素搭配',
-  [RecipeType.DIET]: '减脂类',
-};
+
 
 // 轮播图数据
 const bannerItems = [

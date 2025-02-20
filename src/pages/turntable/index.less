@@ -121,14 +121,20 @@
 .popup {
   position: fixed;
   top: 30%;
-  left: 15%;
-  background: rgba(255, 107, 107, 0.95);
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
   z-index: 9999;
+  pointer-events: none;
   
   .popupContent {
+    pointer-events: auto;
+    background: rgba(255, 107, 107, 0.95);
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    width: 60%;
     text-align: center;
     color: #fff;
     font-size: 18px;
@@ -140,6 +146,13 @@
       color: #ffeb3b;
     }
   }
+}
+
+.settingIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  z-index: 1;
 }
 
 :global {
@@ -156,3 +169,27 @@
     --animate-duration: 0.5s;
   }
 } 
+
+.recipeItem {
+  width: 50px;
+  height: 80px;
+  margin-right: 10px;
+  overflow: hidden;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  .recipeImage {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  .recipeName {
+    font-size: 12px;
+    color: #333;
+    text-align: center;
+  }
+}
+
